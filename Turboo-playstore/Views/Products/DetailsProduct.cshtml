@@ -1,0 +1,74 @@
+﻿@model Turboo_playstore.ViewModels.ProductViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container">
+    <h1>Details</h1>
+
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="row">
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ImageView)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ImageView)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Brand)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Brand)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.WholeSalePrice)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.WholeSalePrice)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SellingPrice)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SellingPrice)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CategoryId)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="EditProduct" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

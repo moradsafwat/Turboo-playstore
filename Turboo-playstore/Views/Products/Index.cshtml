@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Turboo_playstore.ViewModels.ProductViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+    <div class="text-center">
+        <h1 data-aos="fade-up">All Products</h1>
+    </div>
+    <p>
+        <a asp-action="CreateProduct" asp-controller="Products" class="btn btn-outline-success">Create New</a>
+    </p>
+    <table class=" text-center table-striped w-100">
+        <thead>
+            <tr>
+                <th>
+                    Image
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Desc.
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Brand
+                </th>
+                <th>
+                    Category
+                </th>
+                <th>
+                    Qty
+                </th>
+                <th>
+                    Whole Sale Price
+                </th>
+                <th>
+                    SellingPrice
+                </th>
+                <th>
+                    Total Amount
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.ImageView)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Brand)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.CategoryId)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.WholeSalePrice)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.SellingPrice)
+                    </td>
+                    <td class="align-middle">
+                        @(item.SellingPrice * item.Quantity)
+                    </td>
+                    <td class="align-middle">
+                        <a asp-action="EditProduct" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a> |
+                        <a asp-action="DetailsProduct" asp-route-id="@item.Id"><i class="bi bi-window"></i></a> |
+                        <a asp-action="DeleteProduct" asp-route-id="@item.Id"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

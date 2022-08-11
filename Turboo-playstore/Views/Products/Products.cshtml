@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Turboo_playstore.ViewModels.ProductViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- ======= Our Services Section ======= -->
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h2>Products</h2>
+            <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
+        </div>
+        <div class="row">
+            @foreach(var item in Model) { 
+            <div class="col-md-4 card" style="width: 18rem;">
+                @if (item.ImageView != null)
+                {
+                    <img id="productPhoto" class="card-img-top" src="~/Uploads/@item.ImageView" alt="Product Photo" />
+                }
+                else
+                {
+                    <img id="productPhoto" class="card-img-top" src="~/Uploads/default.png" alt="Product Photo" />
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Description</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Brand :</strong> @item.Brand</li>
+                    <li class="list-group-item"><strong>Qty :</strong>@item.Quantity</li>
+                    <li class="list-group-item"><strong>Category :</strong> @item.CategoryName</li>
+                    <li class="list-group-item"><strong>Price :</strong> $ @item.SellingPrice</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="btn btn-outline-success">Add to invoice</a>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+    <!-- End Our Services Section -->
