@@ -2721,3 +2721,8 @@ section {
     height: 250px;
     border-radius: 20px;
 }
+.product-pic{
+    width: 125px;
+    height: 125px;
+    border-radius: 70px;
+}

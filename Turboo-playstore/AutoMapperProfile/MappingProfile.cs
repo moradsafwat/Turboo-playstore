@@ -15,7 +15,8 @@ namespace Turboo_playstore.AutoMapperProfile
             CreateMap<Product, ProductViewModel>()
                 .ForMember(d => d.CategoryName, s => s.MapFrom(s => s.Category.Name))
                 .ForMember(d => d.ImageView, s => s.MapFrom(s => s.Image)); 
-            CreateMap<ProductViewModel, Product>();
+            CreateMap<ProductViewModel, Product>()
+                .ForMember(d => d.Image, s => s.MapFrom(s => s.ImageView)); ;
             CreateMap<CategoryViewModel, Category>();
             CreateMap<Category, CategoryViewModel>();
         }

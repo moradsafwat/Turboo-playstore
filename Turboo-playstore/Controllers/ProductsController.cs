@@ -79,6 +79,8 @@ namespace Turboo_playstore.Controllers
                         string fullPath = Path.Combine(uploads, fileName);
                         productVm.ImageFile.CopyTo(new FileStream(fullPath, FileMode.Create));
                     };
+
+                    productVm.ImageView = fileName;
                     _productsService.Create(productVm);
                     return RedirectToAction("Index", "Products");
                 }
@@ -120,7 +122,9 @@ namespace Turboo_playstore.Controllers
 
                         string fullPath = Path.Combine(uploads, fileName);
                         model.ImageFile.CopyTo(new FileStream(fullPath, FileMode.Create));
+                        model.ImageView = fileName;
                     }
+                    model.ImageView = fileName;
                     _productsService.Update(id, model);
                     return RedirectToAction("Index", "Products");
                 }

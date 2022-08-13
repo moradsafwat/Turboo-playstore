@@ -10,7 +10,14 @@
     <hr />
     <div class="row">
         <div class="card" style="width: 100%">
-            <img src="~/assets/img/portfolio/branding-2.jpg" class="card-img-top" alt="..." />
+            @if (Model.ImageView != null)
+            {
+                <img src="~/Uploads/@Model.ImageView" class="product-photo card-img-top" alt="..." />
+            }
+            else
+            {
+                <img src="~/Uploads/default.png" class="product-photo card-img-top" alt="..." />
+            }
             <div class="card-body">
                 <h5 class="card-title">@Model.Name</h5>
                 <p class="card-text">@Model.Description</p>

@@ -12,58 +12,65 @@
         <dl class="row">
 
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.ImageView)
+                ImageView
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.ImageView)
+                @if (Model.ImageView != null)
+                {
+                    <img src="~/Uploads/@Model.ImageView" class="product-photo card-img-top" alt="..." />
+                }
+                else
+                {
+                    <img src="~/Uploads/default.png" class="product-photo card-img-top" alt="..." />
+                }
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Name)
+                Name
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Name)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Description)
+                Description
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Description)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Type)
+                Type
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Type)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Brand)
+                Brand
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Brand)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.WholeSalePrice)
+                Whole Sale Price
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.WholeSalePrice)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.SellingPrice)
+                Selling Price
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.SellingPrice)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Quantity)
+                Quantity
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Quantity)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.CategoryId)
+                CategoryId
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.CategoryId)
+                @Html.DisplayFor(model => model.CategoryName)
             </dd>
         </dl>
     </div>
